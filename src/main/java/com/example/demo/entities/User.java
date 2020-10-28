@@ -1,5 +1,7 @@
 package com.example.demo.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mongodb.lang.Nullable;
 import lombok.Builder;
 import lombok.Data;
@@ -25,6 +27,8 @@ public class User implements Serializable {
     private String phone;
     @Indexed(unique = true)
     private String username;
+    @JsonIgnore
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private String password;
     private List<String> acl;
 
