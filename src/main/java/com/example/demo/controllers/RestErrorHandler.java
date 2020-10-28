@@ -1,6 +1,5 @@
 package com.example.demo.controllers;
 
-//import com.example.demo.entities.validation.EntityError;
 import com.example.demo.entities.validation.EntityError;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;

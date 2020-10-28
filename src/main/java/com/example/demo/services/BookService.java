@@ -83,7 +83,6 @@ public class BookService {
         bookRepository.deleteById(id);
     }
 
-
     @CachePut(value = "bookCache", key = "#id")
     public void loanBook(String id, Book book) {
         if(!bookRepository.existsById(id)) {

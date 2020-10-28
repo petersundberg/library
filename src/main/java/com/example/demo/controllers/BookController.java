@@ -1,7 +1,6 @@
 package com.example.demo.controllers;
 
 import com.example.demo.entities.Book;
-import com.example.demo.entities.User;
 import com.example.demo.services.BookService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,7 +29,7 @@ public class BookController {
     @GetMapping("/{id}")
     @Secured({"ROLE_ADMIN", "ROLE_USER"})
     public ResponseEntity <Book> findBookById(@PathVariable String id) {
-        return ResponseEntity.ok(bookService.findById(id));     //return bookService.findById(id);
+        return ResponseEntity.ok(bookService.findById(id));
     }
 
     @PostMapping
@@ -66,8 +65,6 @@ public class BookController {
     public void returnBook(@Validated @PathVariable String id, @RequestBody Book book) {
         bookService.returnBook(id, book);
     }
-
-
 
 }
 

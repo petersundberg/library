@@ -31,7 +31,7 @@ public class UserController {
     @Secured({"ROLE_ADMIN"})
     @GetMapping("/{id}")
     public ResponseEntity<User> findUserById(@PathVariable String id) {
-        return ResponseEntity.ok(userService.findById(id));     //return userService.findById(id);
+        return ResponseEntity.ok(userService.findById(id));
     }
 
     @Secured({"ROLE_ADMIN"})
